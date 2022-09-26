@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react'
+import {Routes ,Route} from 'react-router-dom';
+import Navbar from './component/Navbar';
+import Actor from './Actor';
+import Show from './Show';
+import './App.css'
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2 className="header">TV Maze</h2>
+      <Navbar/>
+      <div className="container">
+     <Routes>
+        <Route path="/" element={<Actor></Actor>}/>
+        <Route path="/Show" element={<Show></Show>}/> 
+        
+      </Routes>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
